@@ -108,6 +108,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,            spawn,             {.v = (const char*[]){ "passmenu", NULL } } },
 	{ MODKEY,                       XK_Delete,       spawn,             {.v = (const char*[]){ "dmkill", NULL } } },
 	{ MODKEY,                       XK_Home,         spawn,             {.v = (const char*[]){ "displayselect", NULL } } },
+	{ MODKEY,                       XK_Tab,          spawn,             {.v = (const char*[]){ "wmswitcher", NULL } } },
 
 	{ 0,                            XK_Print,        spawn,             {.v = (const char*[]){ "screenshot", NULL } } },
 	{ ShiftMask,                    XK_Print,        spawn,             {.v = (const char*[]){ "screenshot", "selected", NULL } } },
@@ -149,7 +150,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_x,            scratchpad_hide,   {0} },
 	{ MODKEY|ControlMask,           XK_x,            scratchpad_remove, {0} },
 
-	{ MODKEY,                       XK_Tab,          view,              {0} },
+	{ MODKEY|ShiftMask,             XK_Tab,          view,              {0} },
 	{ MODKEY,                       XK_apostrophe,   view,              {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_apostrophe,   tag,               {.ui = ~0 } },
 
