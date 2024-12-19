@@ -31,9 +31,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Signal",   NULL,       NULL,       1 << 4,       1,           -1 },
-	{ "Alacritty","floatterm",NULL,       0,            1,           -1 },
+	/* class    instance title        tags mask     isfloating   monitor */
+	{ "Signal", NULL,    NULL,        1 << 4,       1,           -1 },
+	{ TERMINAL, NULL,    "floatterm", 0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -100,7 +100,7 @@ static const Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_n,            spawn,             {.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
 	{ MODKEY,                       XK_F12,          spawn,             {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
-	{ MODKEY|ShiftMask,             XK_b,            spawn,             {.v = (const char*[]){ TERMINAL, "--class", "Alacritty,floatterm", "-e", "bc", "-lq", NULL } } },
+	{ MODKEY|ShiftMask,             XK_b,            spawn,             {.v = (const char*[]){ TERMINAL, "--class", TERMINAL, "-T", "floatterm", "-e", "bc", "-lq", NULL } } },
 	{ MODKEY|ShiftMask,             XK_t,            spawn,             {.v = (const char*[]){ TERMINAL, "-e", "trans", "-shell", "-brief", ":vi", NULL } } },
 	{ MODKEY,                       XK_t,            spawn,             {.v = (const char*[]){ "dmtodo", NULL } } },
 	{ MODKEY|ShiftMask,             XK_m,            spawn,             SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
@@ -121,7 +121,7 @@ static const Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_c,            killclient,        {0} },
 
-	/* Mod+Ctrl+ r(eload) / q(uit) */
+	/* Mod+Ctrl+ r(eload) */
 	{ MODKEY|ControlMask,           XK_r,            quit,              {0} },
 	{ MODKEY|ControlMask,           XK_c,            spawn,             {.v = quitdwm } },
 
@@ -167,7 +167,7 @@ static const Key keys[] = {
 	// { 0, XF86XK_AudioMedia,         spawn,           {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
 	{ 0, XF86XK_AudioMicMute,       spawn,           SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
 	// { 0, XF86XK_sysactOff,           spawn,          {.v = (const char*[]){ "dmsysact", NULL } } },
-	{ 0, XF86XK_Calculator,         spawn,           {.v = (const char*[]){ TERMINAL, "-e", "bc", "-l", NULL } } },
+	{ 0, XF86XK_Calculator,         spawn,           {.v = (const char*[]){ TERMINAL, "-e", "bc", "-lq", NULL } } },
 	{ 0, XF86XK_Sleep,              spawn,           {.v = (const char*[]){ "systemctl", "suspend", NULL } } },
 	{ 0, XF86XK_WWW,                spawn,           {.v = (const char*[]){ BROWSER, NULL } } },
 	{ 0, XF86XK_DOS,                spawn,           {.v = (const char*[]){ TERMINAL, NULL } } },
