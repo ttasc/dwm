@@ -10,7 +10,7 @@ static const unsigned int gappx     = 10;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:style:medium:size=12", "JetBrainsMono Nerd Font Mono:style:medium:size=19" };
+static const char *fonts[]          = { "monospace:style:bold:size=12", "JetBrainsMono Nerd Font Mono:style:bold:size=19" };
 static const char normbordercolor[] = "#1b1d2b";
 static const char normbgcolor[]     = "#222436";
 static const char normfgcolor[]     = "#828bb8";
