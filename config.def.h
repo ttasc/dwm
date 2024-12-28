@@ -93,6 +93,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,        spawn,	            SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -s 34 $(pidof -x dwmbar)") },
 	{ MODKEY,                       XK_equal,        spawn,             SHCMD("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+; kill -s 34 $(pidof -x dwmbar)") },
 	{ MODKEY,                       XK_0,            spawn,             SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -s 34 $(pidof -x dwmbar)") },
+	{ MODKEY|ShiftMask,             XK_minus,        spawn,             SHCMD("xbacklight -inc 10; kill -s 35 $(pidof -x dwmbar)") },
+	{ MODKEY|ShiftMask,             XK_equal,        spawn,             SHCMD("xbacklight -dec 10; kill -s 35 $(pidof -x dwmbar)") },
 
 	{ MODKEY,                       XK_BackSpace,    spawn,             {.v = (const char*[]){ "dunstctl", "close", NULL } } },
 	{ MODKEY|ShiftMask,             XK_BackSpace,    spawn,             {.v = (const char*[]){ "dunstctl", "close-all", NULL } } },
@@ -157,6 +159,8 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioMute,          spawn,           SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -s 34 $(pidof -x dwmbar)") },
 	{ 0, XF86XK_AudioRaiseVolume,   spawn,           SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%- && wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+; kill -s 34 $(pidof -x dwmbar)") },
 	{ 0, XF86XK_AudioLowerVolume,   spawn,           SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -s 34 $(pidof -x dwmbar)") },
+	{ MODKEY, XF86XK_AudioRaiseVolume, spawn,        SHCMD("xbacklight -inc 10; kill -s 35 $(pidof -x dwmbar)") },
+	{ MODKEY, XF86XK_AudioLowerVolume, spawn,        SHCMD("xbacklight -dec 10; kill -s 35 $(pidof -x dwmbar)") },
 	// { 0, XF86XK_AudioPrev,          spawn,           {.v = (const char*[]){ "mpc", "prev", NULL } } },
 	// { 0, XF86XK_AudioNext,          spawn,           {.v = (const char*[]){ "mpc",  "next", NULL } } },
 	// { 0, XF86XK_AudioPause,         spawn,           {.v = (const char*[]){ "mpc", "pause", NULL } } },
