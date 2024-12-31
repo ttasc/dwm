@@ -111,6 +111,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Delete,       spawn,             {.v = (const char*[]){ "dmkill", NULL } } },
 	{ MODKEY,                       XK_Home,         spawn,             {.v = (const char*[]){ "displayselect", NULL } } },
 	{ MODKEY,                       XK_Tab,          spawn,             {.v = (const char*[]){ "wmswitcher", NULL } } },
+	{ MODKEY,                       XK_slash,        spawn,             {.v = (const char*[]){ "dmwebsearch", NULL } } },
 
 	{ 0,                            XK_Print,        spawn,             {.v = (const char*[]){ "screenshot", NULL } } },
 	{ ShiftMask,                    XK_Print,        spawn,             {.v = (const char*[]){ "screenshot", "selected", NULL } } },
