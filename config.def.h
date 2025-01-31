@@ -115,6 +115,8 @@ static const Key keys[] = {
 
 	{ 0,                            XK_Print,        spawn,             {.v = (const char*[]){ "screenshot", NULL } } },
 	{ ShiftMask,                    XK_Print,        spawn,             {.v = (const char*[]){ "screenshot", "selected", NULL } } },
+	{ ControlMask,                  XK_Print,        spawn,             {.v = (const char*[]){ "dmrecord", NULL } } },
+	{ ControlMask|ShiftMask,        XK_Print,        spawn,             {.v = (const char*[]){ "dmrecord", "kill", NULL } } },
 
 	{ MODKEY,                       XK_b,            togglebar,         {0} },
 	{ MODKEY,                       XK_1,            setlayout,         {.v = &layouts[0]} },
