@@ -2,7 +2,7 @@
 
 /* Constants */
 #define TERMINAL "alacritty"
-#define BROWSER "chromium"
+#define BROWSER "librewolf"
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
