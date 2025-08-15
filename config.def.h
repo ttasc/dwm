@@ -108,8 +108,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_BackSpace,    spawn,             {.v = (const char*[]){ "dunstctl", "close-all", NULL } } },
 	{ MODKEY,                       XK_backslash,    spawn,             {.v = (const char*[]){ "dunstctl", "history-pop", NULL } } },
 
-	{ MODKEY|ShiftMask,             XK_minus,        spawn,             SHCMD("xbacklight -inc 10; kill -s 35 $(pidof -x dwmbar)") },
-	{ MODKEY|ShiftMask,             XK_equal,        spawn,             SHCMD("xbacklight -dec 10; kill -s 35 $(pidof -x dwmbar)") },
+	{ MODKEY|ShiftMask,             XK_minus,        spawn,             SHCMD("xbacklight -dec 10; kill -s 35 $(pidof -x dwmbar)") },
+	{ MODKEY|ShiftMask,             XK_equal,        spawn,             SHCMD("xbacklight -inc 10; kill -s 35 $(pidof -x dwmbar)") },
 	{ MODKEY,                       XK_minus,        spawn,	            SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -s 34 $(pidof -x dwmbar)") },
 	{ MODKEY,                       XK_equal,        spawn,             SHCMD("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+; kill -s 34 $(pidof -x dwmbar)") },
 	{ MODKEY,                       XK_0,            spawn,             SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -s 34 $(pidof -x dwmbar)") },
