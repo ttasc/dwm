@@ -90,6 +90,7 @@ static const Key keys[] = {
 
 	{ MODKEY|ControlMask,           XK_Escape,       spawn,             {.v = (const char*[]){ "dmsysact", NULL } } },
 	{ MODKEY,                       XK_t,            spawn,             {.v = (const char*[]){ "dmtodo", NULL } } },
+	{ MODKEY,                       XK_y,            spawn,             {.v = (const char*[]){ "stuff", NULL } } },
 	{ MODKEY,                       XK_Delete,       spawn,             {.v = (const char*[]){ "dmkill", NULL } } },
 	{ MODKEY,                       XK_slash,        spawn,             {.v = (const char*[]){ "dmwebsearch", NULL } } },
 	{ MODKEY,                       XK_m,            spawn,             {.v = (const char*[]){ "mounter", NULL } } },
