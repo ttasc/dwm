@@ -32,7 +32,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class    instance title        tags mask     isfloating   monitor */
-	{ "Signal", NULL,    NULL,        1 << 4,       1,           -1 },
 	{ TERMINAL, NULL,    "floatterm", 0,            1,           -1 },
 };
 
